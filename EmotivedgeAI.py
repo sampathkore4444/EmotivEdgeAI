@@ -97,7 +97,8 @@ if st.button('Analyze Employee Emotion for Input Text'):
         label, score = analyze_text(user_input)
         # st.write('Sentiment Analysis Results using BERT:')
         st.write('Employee Emotion Analysis Results:')
-        st.write(f"Label: {label}")
+        # st.write(f"Label: {label}")
+        st.write(f"Emotion: {label}")
         st.write(f"Score: {score}")
 
         # Summary statistics
