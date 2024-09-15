@@ -52,7 +52,7 @@ def analyze_text_concurrent(texts):
 
 def analyze_dataframe(df, text_column):
     sentiments = analyze_text_concurrent(df[text_column].tolist())
-    df['Sentiment_Label'], df['Sentiment_Score'] = zip(*sentiments)
+    df['Emotion_Label'], df['Emotion_Score'] = zip(*sentiments)
     return df
 
 user_input = st.text_area('Enter employee feedback here:', '')
@@ -66,7 +66,7 @@ if uploaded_file:
     text_column = st.selectbox("Select the column containing feedback data", df.columns)
     if st.button('Analyze Feedback in Excel File'):
         result_df = analyze_dataframe(df, text_column)
-        st.write("Sentiment Analysis Results:")
+        st.write("Emotions Analysis Results:")
         st.write(result_df)
 
         # Visualization of Sentiment Distribution
@@ -83,7 +83,7 @@ if uploaded_file:
         print("sentiment_filter=",emotion_filter)
 
         if emotion_filter != 'All':
-            result_df = result_df[result_df['Sentiment_Label'] == emotion_filter]
+            result_df = result_df[result_df['Emotion_Label'] == emotion_filter]
        
         st.write("Filtered Results:")
         st.write(result_df)
