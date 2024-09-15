@@ -4,3 +4,4 @@ transformers==4.33.0
 langdetect==1.0.5
 matplotlib==3.9.2
 seaborn==0.13.2
+openpyxl==3.1.3
