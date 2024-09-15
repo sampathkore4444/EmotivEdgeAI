@@ -91,7 +91,7 @@ if uploaded_file:
         csv = result_df.to_csv(index=False).encode('utf-8')
         st.download_button("Download results as CSV", csv, "sentiment_analysis_results.csv", "text/csv", key='download-csv')
 
-if st.button('Analyze Sentiment for Input Text'):
+if st.button('Analyze Employee Emotion for Input Text'):
     if user_input:
         st.write('<script>document.title="";</script>', unsafe_allow_html=True)
         label, score = analyze_text(user_input)
