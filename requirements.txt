@@ -1,3 +1,4 @@
 streamlit==1.27.2
 transformers==4.33.0
 langdetect==1.0.5
+matplotlib==3.9.2
