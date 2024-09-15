@@ -98,6 +98,7 @@ if st.button('Analyze Employee Emotion for Input Text'):
         # st.write('Sentiment Analysis Results using BERT:')
         st.write('Employee Emotion Analysis Results:')
         # st.write(f"Label: {label}")
+        label = 'POSITIVE' if label=='POS' else 'NEGATIVE'
         st.write(f"Emotion: {label}")
         st.write(f"Score: {score}")
 
