@@ -6,6 +6,8 @@ from langdetect import detect
 import pandas as pd
 import concurrent.futures
 
+st.set_page_config(page_title="AI Powered Emotivedge")
+
 # Load the classifier globally to save resources
 # classifier = pipeline(model="finiteautomata/bertweet-base-sentiment-analysis") #This model is best
 
@@ -18,7 +20,7 @@ def load_model():
 # Load model and processor only once
 classifier = load_model()
 
-st.set_page_config(page_title="AI Powered Emotivedge")
+
 
 # st.title('Sentiment Analysis App')
 st.title('Emotivedge Powered by AI')
