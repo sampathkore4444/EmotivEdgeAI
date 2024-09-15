@@ -77,16 +77,16 @@ if uploaded_file:
         plt.close(fig)  # Close the figure after rendering
         st.pyplot(fig)
 
-        # Interactive filtering
-        st.subheader('Interactive Filtering')
-        emotion_filter = st.selectbox('Filter by Emotion', options=['','All', 'POS', 'NEG', 'NEU'])
-        print("sentiment_filter=",emotion_filter)
+        # # Interactive filtering
+        # st.subheader('Interactive Filtering')
+        # emotion_filter = st.selectbox('Filter by Emotion', options=['','All', 'POS', 'NEG', 'NEU'])
+        # print("sentiment_filter=",emotion_filter)
 
-        if emotion_filter != 'All':
-            result_df = result_df[result_df['Emotion_Label'] == emotion_filter]
+        # if emotion_filter != 'All':
+        #     result_df = result_df[result_df['Emotion_Label'] == emotion_filter]
        
-        st.write("Filtered Results:")
-        st.write(result_df)
+        # st.write("Filtered Results:")
+        # st.write(result_df)
 
         # Download option
         csv = result_df.to_csv(index=False).encode('utf-8')
