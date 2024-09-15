@@ -70,19 +70,20 @@ if uploaded_file:
         st.write(result_df)
 
         # Visualization of Sentiment Distribution
-        st.write("Sentiment Distribution:")
+        # st.write("Sentiment Distribution:")
+        st.write("Emotion Distribution:")
         fig, ax = plt.subplots()
-        sns.countplot(x='Sentiment_Label', data=result_df, ax=ax)
+        sns.countplot(x='Emotion_Label', data=result_df, ax=ax)
         plt.close(fig)  # Close the figure after rendering
         st.pyplot(fig)
 
         # Interactive filtering
         st.subheader('Interactive Filtering')
-        sentiment_filter = st.selectbox('Filter by Sentiment', options=['','All', 'POS', 'NEG', 'NEU'])
-        print("sentiment_filter=",sentiment_filter)
+        emotion_filter = st.selectbox('Filter by Emotion', options=['','All', 'POS', 'NEG', 'NEU'])
+        print("sentiment_filter=",emotion_filter)
 
-        if sentiment_filter != 'All':
-            result_df = result_df[result_df['Sentiment_Label'] == sentiment_filter]
+        if emotion_filter != 'All':
+            result_df = result_df[result_df['Sentiment_Label'] == emotion_filter]
        
         st.write("Filtered Results:")
         st.write(result_df)
@@ -98,7 +99,7 @@ if st.button('Analyze Employee Emotion for Input Text'):
         # st.write('Sentiment Analysis Results using BERT:')
         st.write('Employee Emotion Analysis Results:')
         # st.write(f"Label: {label}")
-        label = 'POSITIVE' if label=='POS' else 'NEGATIVE'
+        label = 'POSITIVE ' if label=='POS' else 'NEGATIVE'
         st.write(f"Emotion: {label}")
         st.write(f"Score: {score}")
 
